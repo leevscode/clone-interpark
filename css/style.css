@@ -32,10 +32,26 @@ body {
 .inner {
   display: block;
   position: relative;
-  width: 1280px;
-  width: 128rem;
+  max-width: 1280px;
   margin: 0 auto;
 }
+@media screen and (max-width: 1280px) {
+  .inner {
+    max-width: 1024px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .inner {
+    max-width: 760px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .inner {
+    max-width: 100%;
+  }
+}
+
 /* float 해제 */
 .clearfix::after {
   display: block;
@@ -150,6 +166,7 @@ body {
   background: url("../images/icon_linkArrow.svg") no-repeat center;
 }
 
+/* 플라잉 배너 */
 .fix-banner {
   position: fixed;
   right: 20px;
@@ -157,7 +174,6 @@ body {
   z-index: 9999;
   text-align: center;
 }
-
 .fix-banner a {
   display: block;
 }
@@ -166,7 +182,7 @@ body {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.1.5);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   background: #fff url("../images/btn_topArrow.svg") no-repeat center;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.16);
   font-size: 0;
@@ -262,6 +278,7 @@ body {
 }
 
 .header-right {
+  position: relative;
   float: right;
 }
 .member-list {
@@ -330,6 +347,13 @@ body {
   font-weight: 500;
 }
 
+.mb-mypage {
+  position: absolute;
+  right: 20px;
+  top: -5px;
+  display: none;
+}
+
 .header-down {
 }
 
@@ -385,6 +409,65 @@ body {
   width: 1px;
   height: 16px;
   background: rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    border-bottom: 8px solid #f0f4f4;
+  }
+  .header .inner {
+    padding-top: 15px;
+    height: 230px;
+  }
+  .logo {
+    width: 77px;
+    height: 18px;
+    margin-left: 15px;
+  }
+  .header-left {
+    width: 100%;
+  }
+
+  .search {
+    left: 50%;
+    transform: translate(-50%);
+    top: 140px;
+  }
+  .member-list {
+    display: none;
+  }
+  .mb-mypage {
+    display: block;
+  }
+
+  .header-down {
+    text-align: center;
+  }
+  .service-menu {
+    display: none;
+  }
+  .service-list {
+    display: inline-block;
+    float: none;
+    margin-top: -1px;
+  }
+  .service-list li {
+    padding-right: 20px;
+  }
+  .service-list li:last-child {
+    padding-right: 0px;
+  }
+
+  .service-list li a {
+    font-size: 12px;
+    font-weight: 400;
+  }
+  .service-list li a img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+  }
 }
 
 /* 추천이벤트 */
