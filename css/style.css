@@ -1264,6 +1264,10 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
+  .live .section-slide {
+    height: 285px;
+  }
+
   .live-info {
     padding: 12px;
   }
@@ -1351,6 +1355,7 @@ body {
 .books .section-slide {
   /* height: 400px; */
 }
+
 .books .section-slide .sw-bt {
   top: 41%;
 }
@@ -1400,11 +1405,11 @@ body {
   font-weight: 700;
   font-style: normal;
 }
+
 @media screen and (max-width: 1280px) {
   .books .section-slide .sw-bt {
     top: 44%;
   }
-
   .books-img {
     height: 457px;
   }
@@ -1413,21 +1418,21 @@ body {
   .books-img {
     height: 322px;
   }
-
-  .books.info.title {
+  .books-info-title {
     font-size: 13px;
     line-height: 15px;
     margin: 4px 0;
   }
-  .books.info.price {
+  .books-info-price {
     font-size: 14px;
   }
-  .books.info.price em {
+  .books-info-price em {
     font-size: 14px;
   }
 }
 @media screen and (max-width: 760px) {
   .books-img {
+    height: 41.66vw;
   }
 }
 
@@ -1448,6 +1453,7 @@ body {
   height: 100%;
 }
 .events-link {
+  position: relative;
   display: block;
   width: 100%;
   height: 100%;
@@ -1463,6 +1469,12 @@ body {
   transform: translate(-50%, -50%);
   width: 100%;
   mix-blend-mode: multiply;
+}
+
+@media screen and (max-width: 1024px) {
+  .event {
+    display: none;
+  }
 }
 
 /* 하단 */
