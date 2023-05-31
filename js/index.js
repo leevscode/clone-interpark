@@ -2,6 +2,14 @@
 // 사용되는 리소스가 모두 로드가 완료되고 나서
 // js 를 실행하여야 정상적인 처리가 가능하다.
 window.onload = function () {
+    // 모달창 처리
+    let body = document.querySelector("body");
+    body.classList.add("modal-active");
+    let modal = document.querySelector(".modal");
+    modal.onclick = function () {
+        body.classList.remove("modal-active");
+        this.style.display = "none";
+    };
     // 위로 이동하기
     // .gotop 을 js에 저장하자.
     const goTop = document.querySelector(".gotop");
@@ -37,7 +45,7 @@ window.onload = function () {
         }
     };
 
-    dataXhttp.open("GET", "prodata.json");
+    dataXhttp.open("GET", "data/prodata.json");
     dataXhttp.send();
 
     function makePromotionSlide() {
@@ -78,71 +86,6 @@ window.onload = function () {
             breakpoints: {
                 760: {
                     slidesPerView: 2,
-                },
-            },
-        });
-    }
-    
-    let booksData;
-    const booksXhttp = new XMLHttpRequest();
-    booksXhttp.onreadystatechange = function (event) {
-        let req = event.target;
-        if (req.readyState === XMLHttpRequest.DONE) {
-            booksData = JSON.parse(req.response);
-            makebooksslide();
-        }
-    };
-    booksXhttp.open("GET", "booksData.json");
-    booksXhttp.send();
-    function makebooksslide() {
-        let swbooksHtml = ``;
-        for (let i = 0; i < booksData.books_total; i++) {
-            let obj = booksData[`books_${i + 1}`];
-            let temp = `<div class="swiper-slide">
-            <a href="${obj.link}" class="books-link">
-                <div class="books-img">
-                    <img src="images/${obj.pic}" alt="${obj.alt}" />
-                </div>
-                <div class="books-info">
-                    <p class="books-info-title">${obj.title}</p>
-                    <p class="books-info-price"><em>${obj.price}</em>원</p>
-                </div>
-            </a>
-        </div>`;
-            swbooksHtml += temp;
-        }
-
-        let swLiveWrapper = document.querySelector(".sw-books .swiper-wrapper");
-        swLiveWrapper.innerHTML = swbooksHtml;
-        let booksSwiper = new Swiper(".sw-books", {
-            slidesPerView: 3,
-            grid: {
-                rows: 4,
-                fill: "row",
-            },
-            spaceBetween: 19,
-            navigation: {
-                nextEl: ".books .sw-next",
-                prevEl: ".books .sw-prev",
-            },
-            breakpoints: {
-                1024: {
-                    slidesPerView: 3,
-                    slidesPerGroup: 3,
-                    spaceBetween: 30,
-                    grid: {
-                        rows: 1,
-                        fill: "row",
-                    },
-                },
-                1280: {
-                    slidesPerView: 5,
-                    slidesPerGroup: 5,
-                    spaceBetween: 27,
-                    grid: {
-                        rows: 1,
-                        fill: "row",
-                    },
                 },
             },
         });
