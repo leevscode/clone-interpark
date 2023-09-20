@@ -10,6 +10,7 @@
         <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
         <!-- <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" /> -->
         <!-- <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" /> -->
+
         <link rel="manifest" href="images/favicon/site.webmanifest" />
         <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
@@ -46,6 +47,7 @@
         <!-- css 초기화 파일 적용 -->
         <link rel="stylesheet" href="css/style.css" />
         <!-- js 파일로딩 -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="js/index.js"></script>
         <script src="js/shopping.js"></script>
         <script src="js/tour.js"></script>
@@ -56,7 +58,19 @@
     <body>
         <!-- 클론코드 안내창 -->
         <div class="modal">
-            <div class="modal-cont">클론코드 저작권 안내 및 스터디 내용, 깃주소, Notion 주소, 이메일 주소</div>
+            <div class="modal-cont">
+                <!-- <img src="./images" alt="모달로고" /> -->
+                <span class="cont-title">클론코드 저작권 및 안내사항</span>
+                <div class="cont-text">
+                    <p>
+                        해당 사이트는 학습용 포트폴리오로 개발이 되었으므로<br />
+                        본래 웹사이트 인터파크와는 아무련 관련이 없음을 알려드립니다.
+                    </p>
+                    <p>원본사이트:<a href="https://www.interpark.com/">https://www.interpark.com/</a></p>
+                    <p>깃허브주소:<a href="https://github.com/leevscode/clone-interpark">https://github.com/LSYbuilds/clone-interpark</a></p>
+                    <button class="cont-btn">안내사항을 확인 했습니다.</button>
+                </div>
+            </div>
         </div>
         <!-- 플라잉 배너 -->
         <div class="fix-banner">
