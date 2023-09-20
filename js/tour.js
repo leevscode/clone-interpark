@@ -1,12 +1,5 @@
-/**
- * 작성자 : 홍길동
- * 연락처 : aaa@aaa.net;
- * 작성일 : 23-05-22
- * 기능 : 쇼핑몰 리스트 슬라이드 코드
- * 업데이트 : 각 쇼핑몰 리스트 목록 출력 함수화 작업
- */
 window.addEventListener("load", function () {
-  // tour 데이터 파싱 및 슬라이드 제작
+
   function parseTour(_cate) {
     if (_cate === "망설이면 품절") {
       fetch("data/tourdataJS.json")

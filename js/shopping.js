@@ -1,23 +1,7 @@
-/**
- * 작성자 : 홍길동
- * 연락처 : aaa@aaa.net;
- * 작성일 : 23-05-22
- * 기능 : 쇼핑몰 리스트 슬라이드 코드
- * 업데이트 : 각 쇼핑몰 리스트 목록 출력 함수화 작업
- */
 window.addEventListener("load", function () {
-  // 메뉴를 실행시에 쇼핑 목록 slide 내용 변경
+
   function parseShopping(_menu) {
-    //     let xhr = new XMLHttpRequest();
-    //     xhr.onreadystatechange = function (event) {
-    //         let req = event.target;
-    //         if (req.readyState === XMLHttpRequest.DONE) {
-    //             let data = JSON.parse(req.response);
-    //             makeShoppingSlide(data);
-    //         }
-    //     };
-    // 전달된 매개변수 _menu 에 따라서
-    // 관련된 json 데이터를 불러들이고,
+
     if (_menu === "쎈딜") {
       fetch("data/shoppingdata.json")
         .then((res) => res.json())
@@ -41,12 +25,9 @@ window.addEventListener("load", function () {
         .catch((err) => console.log(err));
     }
 
-    // html 을 만들어서
-    // slide 를 만들어준다.
   }
   parseShopping("쎈딜");
 
-  // swiper 슬라이더는 만들기 전에 삭제하자.
   let shoppingSwiper;
 
   function makeShoppingSlide(_data) {
